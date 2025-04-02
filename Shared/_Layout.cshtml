@@ -1,0 +1,99 @@
+﻿@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] E-Stats</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CIS.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand logo" asp-area="" asp-page="/Index">
+                    <i class="fas fa-chart-line logo-icon"></i>
+                    <span>E-STATS</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav main-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Index">
+                                <i class="fas fa-home nav-icon"></i>
+                                <span>Главная</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-page="catalogue" asp-area="" asp-page="/Catalogue">
+                                <i class="fas fa-list nav-icon"></i>
+                                <span>Дисциплины</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-page="cart" asp-area="" asp-page="/Cart">
+                                <i class="fas fa-heart nav-icon"></i>
+                                <span>Избранное</span>
+                            </a>
+                        </li>
+                        @{
+                            var user = await UserManager.GetUserAsync(User);
+                            if (user != null && await UserManager.IsInRoleAsync(user, "admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" data-page="add_game" asp-area="" asp-page="/redact">
+                                        <i class="fas fa-plus-circle nav-icon"></i>
+                                        <span>Добавить</span>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+
+                    <div class="user-section">
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container main-content">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-chart-line footer-logo"></i>
+                    <span>E-STATS</span>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 E-Stats. Все права защищены.
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,8 @@
+﻿@page
+@model CIS.Pages.CatalogueModel
+@{
+	<p>Заголовок</p>
+foreach(var game in Model.Games){
+	<p>@game.Name -@game.Description</p>
+}
+}

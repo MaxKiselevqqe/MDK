@@ -1,0 +1,246 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<!-- Основное содержимое -->
+<main class="main">
+    <div class="container">
+        <!-- Секция с основной статистикой -->
+        <section class="mb-2">
+            <h2 class="section-title">Общая статистика</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-value">247</div>
+                    <div class="stat-label">Матчей сегодня</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">18</div>
+                    <div class="stat-label">Активных турниров</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3.2M</div>
+                    <div class="stat-label">Зрителей онлайн</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">64</div>
+                    <div class="stat-label">Топовых команд</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Хайлайт матча -->
+        <section class="mb-2">
+            <h2 class="section-title">Матч дня</h2>
+            <div class="match-highlight">
+                <div class="match-teams">
+                    <div class="match-team">
+						<img src= "img/logo-TS.png" alt="Team Spirit" class="match-team-logo">
+                        <div class="match-team-name">Team Spirit</div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <img src="img/logo-NV.png" alt="Natus Vincere" class="match-team-logo">
+                        <div class="match-team-name">Natus Vincere</div>
+                    </div>
+                </div>
+                <div class="match-meta">
+                    <div class="match-tournament">
+                        <i class="fas fa-trophy text-warning"></i>
+                        <span>ESL Pro League Season 19</span>
+                    </div>
+                    <div class="match-time">
+                        <i class="far fa-clock"></i>
+                        <span>19:00 MSK</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Карточки с турнирами -->
+        <section class="mb-2">
+            <h2 class="section-title">Активные турниры</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">PGL Major Copenhagen 2024</h3>
+                        <span class="card-badge">CS2</span>
+                    </div>
+                    <p class="text-muted">Призовой фонд: $1,250,000</p>
+                    <p class="text-muted">Участники: 24 команды</p>
+                   
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">The International 2024</h3>
+                        <span class="card-badge">Dota 2</span>
+                    </div>
+                    <p class="text-muted">Призовой фонд: $3,000,000</p>
+                    <p class="text-muted">Участники: 18 команд</p>
+               
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">VCT Masters Madrid</h3>
+                        <span class="card-badge">Valorant</span>
+                    </div>
+                    <p class="text-muted">Призовой фонд: $500,000</p>
+                    <p class="text-muted">Участники: 12 команд</p>
+                   
+                </div>
+            </div>
+        </section>
+
+        <!-- Таблица с командами -->
+        <section>
+            <h2 class="section-title">Топ команды CS2</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <div class="table-text">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Команда</th>
+                            <th>Рейтинг</th>
+                            <th>Матчи</th>
+                            <th>Победы</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class="team-name">
+                                    <img src="img/logo-TS.png" alt="Team Spirit" class="team-logo">
+                                    <span>Team Spirit</span>
+                                </div>
+                            </td>
+                            <td>985</td>
+                            <td>42</td>
+                            <td>35</td>
+                            <td class="text-success">Восходящая</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <div class="team-name">
+                                    <img src="img/logo-NV.png" alt="Natus Vincere" class="team-logo">
+                                    <span>Natus Vincere</span>
+                                </div>
+                            </td>
+                            <td>972</td>
+                            <td>38</td>
+                            <td>30</td>
+                            <td class="text-warning">Стабильная</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <div class="team-name">
+                                    <img src="img/logo-VP.png" alt="Virtus.pro" class="team-logo">
+                                    <span>Virtus.pro</span>
+                                </div>
+                            </td>
+                            <td>950</td>
+                            <td>40</td>
+                            <td>32</td>
+                            <td class="text-success">Восходящая</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <div class="team-name">
+                                    <img src="img/logo-FZ.png" alt="FaZe Clan" class="team-logo">
+                                    <span>FaZe Clan</span>
+                                </div>
+                            </td>
+                            <td>945</td>
+                            <td>35</td>
+                            <td>28</td>
+                            <td class="text-danger">Падающая</td>
+                        </tr>
+                        </div>
+                    </tbody>
+                </table>
+            </div>
+           
+        </section>
+    </div>
+    <div class="tournaments-section">
+        <h2 class="section-title">Турниры по дисциплинам</h2>
+
+        
+
+        <!-- Контейнер для дисциплин с турнирами -->
+        <div class="disciplines-container">
+
+            <!-- Дисциплина 1 -->
+            <div class="discipline" data-game="dota2">
+                <div class="discipline-header">
+                    <img src="img/logo-dota.png" alt="Dota 2" class="game-icon">
+                    <h3 class="game-title">Dota 2</h3>
+                </div>
+
+                <div class="tournaments-list">
+                    <!-- Текущий турнир -->
+                    <div class="tournament-card ongoing">
+                        <div class="tournament-info">
+                            <div class="tournament-name">The International 2023</div>
+                            <div class="tournament-dates">15.10.2023 - 25.10.2023</div>
+                            <div class="tournament-prize">$3,000,000</div>
+                        </div>
+                        <div class="tournament-status ongoing">Идет сейчас</div>
+                    </div>
+
+                    <!-- Предстоящий турнир -->
+                    <div class="tournament-card upcoming">
+                        <div class="tournament-info">
+                            <div class="tournament-name">DreamLeague Season 20</div>
+                            <div class="tournament-dates">12.11.2023 - 20.11.2023</div>
+                            <div class="tournament-prize">$1,000,000</div>
+                        </div>
+                        <div class="tournament-status upcoming">Скоро начнется</div>
+                    </div>
+
+                    <!-- Завершенный турнир -->
+                    <div class="tournament-card completed">
+                        <div class="tournament-info">
+                            <div class="tournament-name">Riyadh Masters 2023</div>
+                            <div class="tournament-dates">15.07.2023 - 25.07.2023</div>
+                            <div class="tournament-prize">$2,500,000</div>
+                            <div class="tournament-winner">
+                                <img src="img/logo-TS.png" alt="Team Spirit" class="winner-logo">
+                                <span>Team Spirit</span>
+                            </div>
+                        </div>
+                        <div class="tournament-status completed">Завершен</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дисциплина 2 -->
+            <div class="discipline" data-game="csgo">
+                <div class="discipline-header">
+                    <img src="img/logo-CS2.png" alt="CS:GO" class="game-icon">
+                    <h3 class="game-title">Counter-Strike 2</h3>
+                </div>
+
+                <div class="tournaments-list">
+                    <!--  CS:GO -->
+                    <div class="tournament-card ongoing">
+                        <div class="tournament-info">
+                            <div class="tournament-name">IEM Katowice 2024</div>
+                            <div class="tournament-dates">01.02.2024 - 12.02.2024</div>
+                            <div class="tournament-prize">$1,000,000</div>
+                        </div>
+                        <div class="tournament-status ongoing">Идет сейчас</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
